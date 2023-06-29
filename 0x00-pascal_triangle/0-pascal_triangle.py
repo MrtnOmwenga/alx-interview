@@ -3,6 +3,7 @@
 Create Pascal's triangle
 """
 
+
 def pascal_triangle(n):
     """
     result- Full table of coefficients
@@ -24,7 +25,7 @@ def pascal_triangle(n):
                 coefficients.append(1)
                 break
             else:
-                while (len(coefficients)<len(result[-1])):
+                while (len(coefficients) < len(result[-1])):
                     prev = result[-1][len(coefficients)-1]
                     curr = result[-1][len(coefficients)]
                     coefficients.append(prev+curr)
