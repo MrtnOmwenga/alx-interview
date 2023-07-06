@@ -15,7 +15,7 @@ def canUnlockAll(boxes):
                     unlocked.append(boxes[key])
             except Exception:
                 break
-    
+
     if len(unlocked) != len(boxes):
         return False
     return True
