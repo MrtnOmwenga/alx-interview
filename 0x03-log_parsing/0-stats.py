@@ -16,9 +16,9 @@ regex = '{} - \[{}\] {}{}{}'.format(ip_r, date_r, method_r, status_code_r, file_
 def log(codes_list, total_size):
     """ Logs output """
     codes_list.sort()
-    print("File size: {}".format(total_size))
+    print("File size: {}".format(total_size), flush=True)
     for code in set(codes_list):
-        print("{}: {}".format(code, codes_list.count(code)))
+        print("{}: {}".format(code, codes_list.count(code)), flush=True)
 
 if __name__ == "__main__":
     codes_list = []
