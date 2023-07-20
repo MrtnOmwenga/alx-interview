@@ -36,12 +36,11 @@ if __name__ == "__main__":
             if searched_line:
                 try:
                     status_code = int(re.search(status_code_r, line).group())
-                    file_size = int(re.search(file_size_r, line).group())
-                    if status_code in possible_codes:
-                        codes_list.append(status_code)
-                    total_size += file_size
+                    codes_list.append(status_code)
                 except Exception:
                     pass
+                file_size = int(re.search(file_size_r, line).group())
+                total_size += file_size
                 if count % 10 == 0:
                     log(codes_list, total_size)
         log(codes_list, total_size)
