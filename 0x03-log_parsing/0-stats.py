@@ -14,10 +14,11 @@ file_size_r = '\d{1,4}\n'
 regex = '{} - \[{}\] {}{}{}'.format(ip_r, date_r, method_r, status_code_r, file_size_r)
 
 def log(codes_list, total_size):
+    """ Logs output """
     codes_list.sort()
     print("File size: {}".format(total_size))
     for code in set(codes_list):
-        print(code, codes_list.count(code))
+        print("{}: {}".format(code, codes_list.count(code)))
 
 if __name__ == "__main__":
     codes_list = []
