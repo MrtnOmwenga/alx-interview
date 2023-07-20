@@ -31,7 +31,7 @@ if __name__ == "__main__":
     try:
         for line in sys.stdin:
             count += 1
-            searched_line = re.search(regex, line)
+            searched_line = re.fullmatch(regex, line)
             if searched_line:
                 try:
                     status_code = int(re.search(status_code_r, line).group())
