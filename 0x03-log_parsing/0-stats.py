@@ -36,7 +36,6 @@ if __name__ == "__main__":
                     pass
                 if count != 0 and count % 9 == 0:
                     log(codes_list, total_size)
-                    codes_list = []
             else:
                 pass
     except KeyboardInterrupt:
