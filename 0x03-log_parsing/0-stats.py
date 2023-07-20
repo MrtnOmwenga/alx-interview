@@ -28,6 +28,7 @@ if __name__ == "__main__":
     codes_list = []
     total_size = 0
     count = 0
+    possible_codes = [200, 301, 400, 401, 403, 404, 405, 500]
     try:
         for line in sys.stdin:
             count += 1
@@ -36,7 +37,8 @@ if __name__ == "__main__":
                 try:
                     status_code = int(re.search(status_code_r, line).group())
                     file_size = int(re.search(file_size_r, line).group())
-                    codes_list.append(status_code)
+                    if status_code in possible_codes:
+                        codes_list.append(status_code)
                     total_size += file_size
                 except Exception:
                     pass
