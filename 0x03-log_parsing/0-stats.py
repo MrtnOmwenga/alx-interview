@@ -41,8 +41,11 @@ if __name__ == "__main__":
                     pass
                 file_size = int(re.search(file_size_r, line).group())
                 total_size += file_size
-                if count % 10 == 0:
-                    log(codes_list, total_size)
+            else:
+                alt_size = int(re.search(file_size_r, line).group())
+                total_size += alt_size
+            if count % 10 == 0:
+                log(codes_list, total_size)
         log(codes_list, total_size)
     except (KeyboardInterrupt, EOFError):
         log(codes_list, total_size)
