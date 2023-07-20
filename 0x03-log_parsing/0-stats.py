@@ -6,12 +6,15 @@ import sys
 import re
 
 
-ip_r = '(\d{1,3}\.){3}\d{1,3}'
-date_r = '\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}\.\d{6}'
-method_r = '"GET /projects/260 HTTP/1\.1"'
-status_code_r = ' \d{3} '
-file_size_r = '\d{1,4}\n'
-regex = '{} - \[{}\] {}{}{}'.format(ip_r, date_r, method_r, status_code_r, file_size_r)
+ip_r = r'(\d{1,3}\.){3}\d{1,3}'
+date_r = r'\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}\.\d{6}'
+method_r = r'"GET /projects/260 HTTP/1\.1"'
+status_code_r = r' \d{3} '
+file_size_r = r'\d{1,4}\n'
+regex = r'{} - \[{}\] {}{}{}'.format(ip_r, date_r,
+                                     method_r, status_code_r,
+                                     file_size_r)
+
 
 def log(codes_list, total_size):
     """ Logs output """
@@ -19,6 +22,7 @@ def log(codes_list, total_size):
     print("File size: {}".format(total_size), flush=True)
     for code in set(codes_list):
         print("{}: {}".format(code, codes_list.count(code)), flush=True)
+
 
 if __name__ == "__main__":
     codes_list = []
@@ -38,5 +42,5 @@ if __name__ == "__main__":
                     log(codes_list, total_size)
             else:
                 pass
-    except KeyboardInterrupt:
+    except (KeyboardInterrupt, EOFError):
         log(codes_list, total_size)
