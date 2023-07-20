@@ -38,7 +38,7 @@ if __name__ == "__main__":
                     total_size += file_size
                 except Exception:
                     pass
-                if count != 0 and count % 10 == 0:
+                if count != 0 and count % 9 == 0:
                     log(codes_list, total_size)
             else:
                 pass
