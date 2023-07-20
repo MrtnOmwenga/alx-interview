@@ -42,6 +42,6 @@ if __name__ == "__main__":
                     pass
                 if count % 10 == 0:
                     log(codes_list, total_size)
-        # log(codes_list, total_size)
+        log(codes_list, total_size)
     except (KeyboardInterrupt, EOFError):
         log(codes_list, total_size)
