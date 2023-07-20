@@ -42,7 +42,6 @@ if __name__ == "__main__":
                     pass
                 if count != 0 and count % 10 == 0:
                     log(codes_list, total_size)
-                    print(status_code,file_size)
             else:
                 pass
     except (KeyboardInterrupt, EOFError):
