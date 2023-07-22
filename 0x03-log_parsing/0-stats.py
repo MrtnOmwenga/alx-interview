@@ -42,8 +42,9 @@ if __name__ == "__main__":
                 file_size = int(re.search(file_size_r, line).group())
                 total_size += file_size
             else:
-                alt_size = int(re.search(file_size_r, line).group())
-                total_size += alt_size
+                alt_size = re.search(file_size_r, line)
+                if alt_size:
+                    total_size += int(alt_size.group())
             if count % 10 == 0:
                 log(codes_list, total_size)
         log(codes_list, total_size)
