@@ -18,9 +18,8 @@ regex = r'{} - \[{}\] {}{}{}'.format(ip_r, date_r,
 
 def log(codes_list, total_size):
     """ Logs output """
-    codes_list.sort()
     print("File size: {}".format(total_size), flush=True)
-    for code in set(codes_list):
+    for code in sorted(set(codes_list)):
         print("{}: {}".format(code, codes_list.count(code)), flush=True)
 
 
@@ -28,7 +27,6 @@ if __name__ == "__main__":
     codes_list = []
     total_size = 0
     count = 0
-    possible_codes = [200, 301, 400, 401, 403, 404, 405, 500]
     try:
         for line in sys.stdin:
             count += 1
