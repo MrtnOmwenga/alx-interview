@@ -7,8 +7,6 @@ Lockboxes
 def canUnlockAll(boxes):
 
     unlocked = [boxes[0]]
-    if len(boxes) == 0 or len(boxes[0]) == 0:
-        return False
 
     for box in unlocked:
         for key in box:
